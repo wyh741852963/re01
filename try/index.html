@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>尝试1</title>
+      <style>
+         body {
+            margin: 0;
+            height: 100vh;
+            background-color: rgb(183, 182, 182);
+         }
+         /* 布局小技巧，能直观看到所有透明元素的位置 */
+         /* 设好间距就可以去掉边框了 */
+         /* * {
+            border: 1px solid black;
+         } */
+         /* 提高美观-->给白色盒子加阴影（直接和白色配套） */
+         .yinYing {
+            box-shadow: rgb(0 0 0/20%) 0px 2px 1px -1px, rgb(0 0 0/14%) 0px 1px 1px 0px, rgb(0 0 0/12%) 0px 1px 3px 0px;
+         }
+         .flex {
+            display: flex;
+         }
+         .baise {
+            background-color: white;
+         }
+         .column {
+            flex-direction: column;
+         }
+         .flex1 {
+            flex: 1;
+         }
+         .margin8 {
+            margin: 8px;
+         }
+         .margin-right {
+            margin-right: 8px;
+         }
+         .margin-top {
+            margin-top: 8px;
+         }
+         .daohang {
+            padding: 5px 5px;
+            border-bottom: 1px solid black;
+            font-size: 16px;
+            color: #666;
+            text-align: center;
+            height: 30px;
+         }
+         /* a:link {
+        color:rgb(250, 120, 213);
+      } */
+         a.one:hover {
+            font-size: 110%;
+            color: rgb(250, 8, 8);
+         }
+         a.two:link {
+            color: #000000;
+         }
+         @media (max-width: 600px) {
+            /* 消失侧边栏 */
+            .cebian {
+               display: none;
+            }
+            /* 使内容区排列改变成竖向 */
+            .neirong {
+               flex-direction: column;
+            }
+            .shujuqu {
+               flex-direction: column;
+            }
+            /* 右区加一个左外边距使其左右对齐 */
+            .youqu {
+               margin-left: 8px;
+            }
+            /* 数据块的边距 */
+            .shujukuai {
+               margin: 0 0 8px;
+               flex: auto;
+            }
+         }
+         .beijing {
+            background-image: url(chengshi.png);
+            background-attachment: fixed;
+            background-repeat: repeat-y;
+         }
+         /* 设置透明 */
+         .touming {
+            color: #000000;
+            background-color: rgba(255, 254, 254, 0.2);
+         }
+         p {
+            text-align: left;
+            font-size: 1em;
+            margin: 1px 2px 1px;
+         }
+         div {
+            background-size: contain; /*控制大小*/
+            background-position: center; /*控制位置*/
+         }
+         .div1 {
+            background-repeat: no-repeat;
+            background-image: url(bilibili.png);
+         }
+         .div2 {
+            background-repeat: no-repeat;
+            background-image: url(网易云.png);
+         }
+         .div3 {
+            background-repeat: no-repeat;
+            background-image: url(知乎.png);
+         }
+         .div4 {
+            background-repeat: no-repeat;
+            background-image: url(菜鸟教程.png);
+         }
+         .div5 {
+            background-repeat: no-repeat;
+            background-image: url(必应.png);
+         }
+         .div6 {
+            background-repeat: no-repeat;
+            background-image: url(阅读.png);
+         }
+         .div7 {
+            background-repeat: no-repeat;
+            background-image: url(刷新.png);
+         }
+         .div8 {
+            background-repeat: no-repeat;
+            background-image: url(设置.png);
+         }
+         /* #logo {
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url(bilibili.png);
+         } */
+         a {
+            display: block; /*链接设置成盒子，才可以和背景图片设为超链接*/
+            width: 80%;
+            height: 80%;
+            text-decoration: none;
+            /* cursor: hand; */
+         }
+      </style>
+   </head>
+   <body class="flex">
+      <!-- 侧边栏 -->
+      <div style="width: 100px; z-index: 2" class="baise yinYing flex column cebian">
+         <!-- 头像栏 -->
+         <div style="padding: 10px; justify-content: center; align-items: center; border-bottom: 1px solid black" class="flex">
+            <img src="https://kangwenchang.com/logo.png" width="40px" height="40px" alt="logo" />
+            <div style="margin-left: 10px">康文昌</div>
+         </div>
+         <!-- 导航栏 -->
+         <div class="flex1">
+            <!-- 导航条 -->
+            <div class="daohang">导航栏</div>
+            <div class="daohang">
+               <a href="yupi.html" class="one" target="_blank">鱼皮</a>
+            </div>
+            <div class="daohang">
+               <a href="3.html" class="one" target="_blank">文字下划线</a>
+            </div>
+            <div class="daohang">
+               <a href="11.html" class="one" target="_blank">光标变化</a>
+            </div>
+            <div class="daohang">
+               <a href="9.html" class="one" target="_blank">各种边框</a>
+            </div>
+         </div>
+      </div>
+      <!-- 主区域 -->
+      <div class="flex1 flex column">
+         <!-- 头部栏 -->
+         <div style="height: 60px; z-index: 1" class="baise flex yinYing">
+            <!-- 链接区 -->
+            <div style="flex: 3" class="flex">
+               <!-- 链接小块 -->
+               <div style="border-right: 1px solid #666; flex: 1" class="baise margin-right yinying div1">
+                  <a href="https://bilibili.com" target="_blank"></a>
+               </div>
+               <div style="border-right: 1px solid #666; flex: 1" class="baise margin-right margin-bottom yinying div2">
+                  <a href="https://music.163.com/" target="_blank"></a>
+               </div>
+               <div style="border-right: 1px solid #666; flex: 1" class="baise margin-right yinying div3">
+                  <a href="https://zhihu.com" target="_blank"></a>
+               </div>
+               <div style="border-right: 1px solid #666; flex: 1" class="baise margin-right yinying div4">
+                  <a href="https://www.runoob.com/" target="_blank"></a>
+               </div>
+               <div style="border-right: 1px solid #666; flex: 1" class="baise margin-right yinying div5">
+                  <a href="https://cn.bing.com/?mkt=zh-cn" target="_blank"></a>
+               </div>
+               <div style="border-right: 3px solid #000; flex: 1" class="baise margin-right yinying div6">
+                  <a href="https://reader.960960.xyz/#/manager/home" target="_blank"></a>
+               </div>
+            </div>
+            <!-- 设置区 -->
+            <div style="flex: 1" class="flex">
+               <!-- 选择区 -->
+               <div style="border-right: 1px solid black; flex: 1" class="baise margin-right yinying div7"><a href=""></a></div>
+               <!-- 设置按钮 -->
+               <div style="border-right: 1px solid black; flex: 1" class="baise yinying div8"></div>
+            </div>
+         </div>
+
+         <!-- 内容区 -->
+         <!-- 在这里加上overflow:auto可以包裹住内容区 -->
+         <div style="overflow: auto" class="flex1 flex neirong beijing">
+            <!-- 左区 -->
+            <div style="flex: 3" class="flex column margin8">
+               <!-- 数据区 -->
+               <div class="flex shujuqu">
+                  <!-- 数据块 -->
+                  <div style="height: 100px" class="baise flex1 margin-right yinYing touming">
+                     <p>你好啊，我来自<a href="https://baike.baidu.com/item/%E6%B1%9F%E8%A5%BF/215383" target="_blank" class="two">江西省</a>现居于南昌</p>
+                  </div>
+                  <div style="height: 100px" class="baise flex1 margin-right yinYing shujukuai touming"></div>
+                  <div style="height: 100px" class="baise flex1 margin-right yinYing shujukuai touming"></div>
+                  <div style="height: 100px" class="baise flex1 yinYing shujukuai touming"></div>
+               </div>
+               <!-- 列表区 -->
+               <div>
+                  <!--列表块  -->
+                  <div style="height: 200px" class="baise margin-top yinYing touming"></div>
+                  <!--列表块  -->
+                  <div style="height: 200px" class="baise margin-top yinYing touming"></div>
+                  <!--列表块  -->
+                  <div style="height: 200px" class="baise margin-top yinYing touming"></div>
+                  <!--列表块  -->
+                  <div style="height: 200px" class="baise margin-top yinYing touming"></div>
+                  <div style="height: 200px" class="baise margin-top yinYing touming"></div>
+                  <div style="height: 200px" class="baise margin-top yinYing touming"></div>
+               </div>
+            </div>
+            <!--右区 -->
+            <div style="flex: 1" class="flex column margin-right youqu">
+               <!-- 公告栏 -->
+               <div style="height: 200px" class="baise margin-top yinYing touming"></div>
+               <!-- 消息栏 -->
+               <div style="height: 500px" class="baise margin-top yinYing touming"></div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
